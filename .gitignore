@@ -18,4 +18,16 @@ Thumbs.db
 # Python build files
 build/
 dist/
-*.egg-info/
+*.egg-info/# Python virtual environment and cache
+agriculture/
+__pycache__/
+*.py[cod]
+
+# Environment variables and secrets
+.env
+
+# Large training dataset
+ml/dataset/
+
+# Temporary files
+*.log
