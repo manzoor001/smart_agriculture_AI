@@ -1,33 +1,34 @@
-# Virtual environment
-agriculture/
-
-# Environment variables
-.env
-
-# Python cache
-__pycache__/
-*.py[cod]
-
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Python build files
-build/
-dist/
-*.egg-info/# Python virtual environment and cache
-agriculture/
-__pycache__/
-*.py[cod]
+# Python virtual environments
+backend/agriculture/
+rag_env/
 
 # Environment variables and secrets
 .env
+backend/.env
 
-# Large training dataset
-ml/dataset/
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
 
-# Temporary files
+# Large training datasets
+backend/ml/dataset/
+
+# Node.js dependencies and build output
+node_modules/
+frontend/node_modules/
+frontend/dist/
+
+# Logs and editor files
 *.log
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated Qdrant vector database
+knowledge_base/qdrant_storage/
+
+# Ignore accidental root-level Node.js files
+/package.json
+/package-lock.json

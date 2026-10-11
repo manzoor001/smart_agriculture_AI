@@ -1,0 +1,349 @@
+.yield-page {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8px 0 36px;
+  color: #1f2937;
+}
+
+.yield-intro {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 26px;
+  margin-bottom: 24px;
+  border: 1px solid #dcefe2;
+  border-radius: 18px;
+  background: linear-gradient(120deg, #f0faf2, #f8fcf9);
+}
+
+.yield-intro-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #d9f1df;
+  font-size: 32px;
+}
+
+.yield-eyebrow {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #218044;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.yield-intro h2 {
+  margin: 0 0 8px;
+  color: #173d27;
+  font-size: clamp(22px, 3vw, 30px);
+}
+
+.yield-intro p {
+  max-width: 650px;
+  margin: 0;
+  color: #607166;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.yield-form {
+  padding: 28px;
+  border: 1px solid #e5e9e6;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 6px 24px rgba(31, 41, 55, 0.04);
+}
+
+.yield-section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin: 4px 0 20px;
+}
+
+.yield-step {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #e8f6ec;
+  color: #218044;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.yield-section-heading h3 {
+  margin: 2px 0 5px;
+  color: #24382b;
+  font-size: 17px;
+}
+
+.yield-section-heading p {
+  margin: 0;
+  color: #78837c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.yield-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+  margin-bottom: 30px;
+}
+
+.yield-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.yield-field > span {
+  color: #36463b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.yield-field input,
+.yield-field select {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 45px;
+  padding: 11px 12px;
+  border: 1px solid #d9e1db;
+  border-radius: 9px;
+  outline: none;
+  background: #fff;
+  color: #25372b;
+  font: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.yield-field input::placeholder {
+  color: #9ba69e;
+}
+
+.yield-field input:focus,
+.yield-field select:focus {
+  border-color: #319653;
+  box-shadow: 0 0 0 3px rgba(49, 150, 83, 0.12);
+}
+
+.yield-field small {
+  color: #7a857e;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.yield-units-note {
+  margin: 0 0 22px;
+  padding: 13px 15px;
+  border-left: 3px solid #d5a13b;
+  border-radius: 5px;
+  background: #fff9e9;
+  color: #77591d;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.yield-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 20px;
+  padding: 13px 15px;
+  border: 1px solid #f1c9c9;
+  border-radius: 10px;
+  background: #fff3f3;
+  color: #a52c2c;
+}
+
+.yield-error p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.yield-actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 4px;
+}
+
+.yield-reset-button,
+.yield-submit-button {
+  min-height: 44px;
+  padding: 12px 19px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.yield-reset-button {
+  border: 1px solid #d8e0da;
+  background: #fff;
+  color: #46564b;
+}
+
+.yield-reset-button:hover:not(:disabled) {
+  background: #f3f7f4;
+}
+
+.yield-submit-button {
+  border: 1px solid #248345;
+  background: #248345;
+  color: #fff;
+}
+
+.yield-submit-button:hover:not(:disabled) {
+  background: #1c6f38;
+  transform: translateY(-1px);
+}
+
+.yield-reset-button:disabled,
+.yield-submit-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.yield-result {
+  margin-top: 24px;
+  padding: 26px;
+  border: 1px solid #cce9d3;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f1fbf3, #ffffff);
+  box-shadow: 0 6px 24px rgba(31, 41, 55, 0.04);
+}
+
+.yield-result-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.yield-result-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: #d9f1df;
+  font-size: 24px;
+}
+
+.yield-result-top h3 {
+  margin: 0;
+  color: #214b30;
+  font-size: 19px;
+}
+
+.yield-result-number {
+  margin: 25px 0 5px;
+  color: #19733b;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.yield-result-unit {
+  margin: 0 0 23px;
+  color: #68796d;
+  font-size: 12px;
+}
+
+.yield-result-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 18px 0;
+  border-top: 1px solid #d8eadc;
+  border-bottom: 1px solid #d8eadc;
+}
+
+.yield-result-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.yield-result-details span {
+  color: #748277;
+  font-size: 11px;
+}
+
+.yield-result-details strong {
+  color: #2c4533;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.yield-disclaimer {
+  margin: 18px 0 0;
+  color: #69786d;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 650px) {
+  .yield-page {
+    padding-top: 0;
+  }
+
+  .yield-intro {
+    align-items: flex-start;
+    gap: 13px;
+    padding: 19px;
+  }
+
+  .yield-intro-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 13px;
+    font-size: 25px;
+  }
+
+  .yield-form {
+    padding: 19px;
+  }
+
+  .yield-form-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .yield-result {
+    padding: 20px;
+  }
+
+  .yield-result-details {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .yield-actions {
+    flex-direction: column-reverse;
+  }
+
+  .yield-reset-button,
+  .yield-submit-button {
+    width: 100%;
+  }
+}

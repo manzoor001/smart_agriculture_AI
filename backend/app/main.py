@@ -2,6 +2,7 @@
 from fastapi import FastAPI, Depends
 from sqlalchemy import text
 from sqlalchemy.orm import Session
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.database.database import Base, engine, get_db
 
@@ -31,22 +32,19 @@ from app.schemas.crop import CropCreate
 from routes.soil import router as soil_router
 from routes.fertilizer import router as fertilizer_router
 from routes.yield_prediction import router as yield_router
-
-# Disease detection is temporarily disabled because its router
-# import was commented out and caused a NameError.
-# We will re-enable it after checking the disease model.
-# from app.services.disease_api import router as disease_router
-
 from routes.weather import router as weather_router
+
 from app.routes.rag_proxy import router as rag_router
 from app.routes.chat import router as chat_router
+
+# Disease Detection
+from app.services.disease_api import router as disease_router
 
 # ============================================================
 # Create database tables
 # ============================================================
 
 Base.metadata.create_all(bind=engine)
-
 
 # ============================================================
 # Create FastAPI application
@@ -57,6 +55,20 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# ============================================================
+# Configure CORS for React frontend
+# ============================================================
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # ============================================================
 # Register API routers
@@ -69,11 +81,7 @@ app.include_router(yield_router)
 app.include_router(weather_router)
 app.include_router(rag_router)
 app.include_router(chat_router)
-
-
-# Disease prediction temporarily disabled
-# app.include_router(disease_router)
-
+app.include_router(disease_router)
 
 # ============================================================
 # Root endpoint
@@ -84,7 +92,6 @@ def root():
     return {
         "message": "Smart Agriculture AI Backend is running!"
     }
-
 
 # ============================================================
 # Test PostgreSQL connection
@@ -107,7 +114,6 @@ def test_database():
             "message": str(e)
         }
 
-
 # ============================================================
 # Test database session
 # ============================================================
@@ -118,7 +124,6 @@ def database_test(db: Session = Depends(get_db)):
         "status": "success",
         "message": "Database session is working!"
     }
-
 
 # ============================================================
 # Create Crop - Protected
@@ -143,7 +148,6 @@ def create_crop(
 
     return new_crop
 
-
 # ============================================================
 # Get All Crops - Protected
 # ============================================================
@@ -158,7 +162,6 @@ def get_crops(
     ).all()
 
     return crops
-
 
 # ============================================================
 # Get Single Crop - Protected
@@ -182,7 +185,6 @@ def get_crop(
         }
 
     return crop
-
 
 # ============================================================
 # Update Crop - Protected
@@ -214,7 +216,6 @@ def update_crop(
     db.refresh(crop)
 
     return crop
-
 
 # ============================================================
 # Delete Crop - Protected
