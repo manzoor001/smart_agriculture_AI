@@ -13,6 +13,7 @@ from app.models.user import User
 from app.models.crop import Crop
 from app.models.soil_data import SoilData
 from app.models.disease import DiseaseRecord
+from app.models.conversation import ChatConversation, ChatMessage
 
 # ============================================================
 # Import authentication
@@ -38,6 +39,7 @@ from routes.yield_prediction import router as yield_router
 
 from routes.weather import router as weather_router
 from app.routes.rag_proxy import router as rag_router
+from app.routes.chat import router as chat_router
 
 # ============================================================
 # Create database tables
@@ -66,6 +68,8 @@ app.include_router(fertilizer_router)
 app.include_router(yield_router)
 app.include_router(weather_router)
 app.include_router(rag_router)
+app.include_router(chat_router)
+
 
 # Disease prediction temporarily disabled
 # app.include_router(disease_router)
