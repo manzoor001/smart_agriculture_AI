@@ -37,6 +37,7 @@ from routes.yield_prediction import router as yield_router
 # from app.services.disease_api import router as disease_router
 
 from routes.weather import router as weather_router
+from app.routes.rag_proxy import router as rag_router
 
 # ============================================================
 # Create database tables
@@ -64,6 +65,7 @@ app.include_router(soil_router)
 app.include_router(fertilizer_router)
 app.include_router(yield_router)
 app.include_router(weather_router)
+app.include_router(rag_router)
 
 # Disease prediction temporarily disabled
 # app.include_router(disease_router)
