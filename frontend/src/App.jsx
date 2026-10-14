@@ -10,6 +10,7 @@ import {
 import ProtectedRoute from "./components/ProtectedRoute";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import AIAssistant from "./pages/AIAssistant";
 import Crops from "./pages/Crops";
 import SoilFertilizer from "./pages/SoilFertilizer";
 import DiseaseDetection from "./pages/DiseaseDetection";
@@ -103,24 +104,8 @@ function Dashboard() {
         return <WeatherIrrigation />;
 
       case "AI Assistant":
-        return (
-          <section className="placeholder-page">
-            <div className="placeholder-icon">🤖</div>
-            <h2>AI Agriculture Assistant</h2>
-            <p>
-              Ask agricultural questions and get AI-powered
-              farming guidance. The assistant interface will
-              be connected here.
-            </p>
-            <button
-              type="button"
-              className="primary-button"
-              onClick={() => setActivePage("Dashboard")}
-            >
-              ← Back to dashboard
-            </button>
-          </section>
-        );
+        return <AIAssistant />;
+        
 
       default:
         return (
